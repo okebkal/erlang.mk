@@ -38,6 +38,4 @@ core-makedep-import: build clean
 	$t test -f $(APP)/ebin/$(APP).app
 	$t test -f $(APP)/ebin/boy.beam
 	$t test -f $(APP)/ebin/human.beam
-	$t grep COMPILE  $(APP)/$(APP).d | grep core
-
-
+	$t grep -q "COMPILE.*core" $(APP)/$(APP).d
